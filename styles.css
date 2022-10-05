@@ -1,0 +1,657 @@
+/* Tyler Waite, twaite2 */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* END CSS RESET */
+
+/* accessibility css from https://webaim.org/techniques/css/invisiblecontent/ */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+/* Nav */
+#skip {
+    height: 30px;
+    left: -10000px;
+    padding: 10px;
+    position: absolute;
+}
+
+#skip:focus{
+    left: 0px;  
+}
+
+header{
+    background: linear-gradient(0deg, #FFF, #55BCD5);
+    height: 300px;
+}
+
+header a img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header h1{
+    padding-top: 120px;
+    padding-left: 2rem;
+    font-family: 'Molle';
+    font-size: 4em;
+}
+
+header p {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    line-height: 40px;
+    padding: 2rem;
+    padding-top: 0;
+    max-width: 400px;
+}
+
+#menu-toggle input {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -7px;
+    right: 10px;  
+    padding: 0;
+    cursor: pointer;  
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */ 
+}
+#menu-toggle label {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 180px;
+    height: 35px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #F6D64A;
+    padding-top: 20px;
+}
+
+#menu-toggle ul{
+    display: grid;
+    position: absolute;
+    width: 100%;
+    left: -10000px;
+    background-color: #FFF;
+    top: 0;
+    margin-top: 55px;
+    grid-template-columns: 1fr;
+}
+
+#menu-toggle ul li{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    background-color: #55BCD5;
+    border-bottom: solid 1px #222;
+}
+
+#menu-toggle ul li a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#menu-toggle input:checked ~ label{
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: #222222;
+    color: #FFF;
+}
+
+#menu-toggle input:checked ~ ul {
+    left: 0;
+    padding-bottom: 10000px;
+}
+
+/* Main Content */
+
+#intro h2{
+    padding-left: 2rem;
+    font-family: 'Molle';
+    font-size: 3em;
+}
+
+#intro p{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 2em;
+    padding: 0.5em 2em;
+}
+
+#intro img, picture{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#plan{
+    background-color:#F6D64A;
+    padding: 20px 0;
+}
+
+#plan h3{
+
+    font-family: 'Molle';
+    font-size: 2.5em;
+    padding-left: 1em;
+}
+
+#plan div{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#plan div section{
+    border: solid 2px #FFF;
+    border-radius: 10px;
+    margin: 1.5em;
+    padding: 1em;
+    background-color: #55BCD5;
+}
+
+#plan div section h4{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#plan div section img{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+
+#testimonials{
+    padding: 20px 0;
+}
+
+#testimonials div{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#testimonials section{
+    margin: 1em;
+    padding: 0 6em;
+}
+
+#testimonials h3{
+    padding-left: 1.5em;
+    font-family: 'Molle';
+    font-size: 2.5em;
+}
+
+#testimonials img{
+    max-width: 200px;
+    display: block;
+    margin: auto;
+}
+
+#testimonials h4{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+#testimonials p, #testimonials q{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+
+#about{
+    background-color: #499BD2;
+    padding: 30px 0;
+}
+
+#about h3{
+    padding-left: 1em;
+    font-family: 'Molle';
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#about div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 4em;
+}
+
+#about section img{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+
+#about h4{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#about p{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contact{
+    display: block;
+    width: 90%;
+    margin: 30px auto;
+}
+
+#contact form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#contact form div{
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#contact h3{
+    padding-left: 1em;
+    font-family: 'Molle';
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#contact .form-required{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.4em;
+}
+
+.required{
+    color: red;
+}
+
+#contact label, #contact fieldset legend{
+    display: block;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#contact input{
+    padding: 1em 1%;
+    border: solid 2px #9B26B0;
+    font-size: 1.1em;
+    width: 98%;
+}
+
+#names, #nums {
+    display: block;
+    width: 95%;
+}
+
+
+#contact fieldset label{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+#contact input[type=radio]{
+    padding: 0;
+    width: 3em;
+    height: 3em;
+    vertical-align: middle;
+    color: #9B26B0;
+    border: solid 1px #9B26B0;
+}
+
+.radio-input{
+    padding-right: 0.5em;
+}
+.custom-select{
+    display: block;
+}
+.custom-select select{
+    display: block;
+    border: solid 2px #9B26B0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    padding: 1em 0.5em;
+    width: 100%;
+}
+
+#contact input[type=submit]{
+    background-color: #9B26B0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 30px;
+    width: 100%;
+}
+
+footer{
+    background-color: #EAEAEA;
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+footer p, footer a{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 1em;
+    color: #000;
+}
+
+
+@media screen and (min-width: 700px){
+
+    header h1{
+        display: block;
+        position: absolute;
+        left: 250px;
+        top: 10px;
+        padding: 0;
+    }
+    header p{
+        display: block;
+        position: absolute;
+        left: 250px;
+        top: 80px;
+        max-width: 550px;
+        padding: 0;
+    }
+    #menu-toggle ul{
+        left: 10%;
+        top: 180px;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        border: none;
+        grid-gap: 1em;
+        background: none;
+    }
+    #menu-toggle li{
+        border: none;
+    }
+
+    #menu-toggle ul li{
+        background-color: white;
+        border-bottom: none;
+    }
+
+    #menu-toggle .active{
+        background-color: #F6D64A;
+    }
+
+    #menu-toggle label{
+        display: none;
+    }
+
+    #intro{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    #intro h2, #intro p{
+        padding: 0;
+    }
+    #intro img, #intro picture{
+        padding: 0;
+        margin: 0;
+    }
+    #img-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1em;
+    }
+    #img-grid picture{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    h3{
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        margin:auto;
+    }
+
+    #plan div{
+        width: 80%;
+        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #testimonials div{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #about div{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #contact fieldset{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer{
+        padding: 20px 4em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 1400px){
+    
+    #menu-toggle ul{
+        top: 0;
+        width: 600px;
+        left: auto;
+        right: 0;
+    }
+    #menu-toggle ul li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #intro{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 50px auto;
+        gap: 20px;
+    }
+    #intro p{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        font-size: 1.1em;
+    }
+    #intro #img-grid{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #plan{
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+    #plan div{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #testimonials{
+        padding: 4em;
+    }
+    #testimonials h3{
+        padding: 0;
+        width: 90%;
+    }
+    #testimonials div{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #testimonials div section{
+        margin: 0;
+        padding: 0;
+    }
+    #about{
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+    
+    #about div{
+        width: 60%;
+        margin: auto;
+    }
+    #about div h4{
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+    #contact form{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    #contact #names{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #contact #nums{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #contact #selects{
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    #contact fieldset legend{
+        padding-bottom: 0;
+    }
+    #contact input[type=submit]{
+        width: 50%;
+        float: right;
+        margin-top: 50px;
+    }
+    #contact{
+        padding-top: 4em;
+        margin-bottom: 6em;
+    }
+    footer{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    footer p{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        text-align: left;
+    }
+    footer a{
+        text-align: right;
+    }
+    header p{
+        max-width: 800px;
+        font-size: 1.2em;
+    }
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
+    font-style: italic;
+}
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
+}
